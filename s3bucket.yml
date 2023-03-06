@@ -1,5 +1,5 @@
 Description: >
-  UdaPeople frontend stack.
+  Stack for creating S3 Bucet with configurrations 
 
 Parameters:
   ID:

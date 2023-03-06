@@ -32,13 +32,14 @@ jobs:
       - run:
           name: Create Network Stack
           command: |
- 
-             aws cloudformation deploy --template-file network.yml   --stack-name "network-${CIRCLE_WORKFLOW_ID:0:5}"   --parameter-overrides  WorkflowID="${CIRCLE_WORKFLOW_ID:0:5}"  --tags project=react 
+             aws cloudformation create-stack --stack-name "network-${CIRCLE_WORKFLOW_ID:0:5}" --template-body file://network.yml   --parameters file://network.json --capabilities "CAPABILITY_IAM" "CAPABILITY_NAMED_IAM" --region=us-east-1   --parameter-overrides  WorkflowID="${CIRCLE_WORKFLOW_ID:0:5}"  --tags project=react 
+             #aws cloudformation deploy --template-file network.yml   --stack-name "network-${CIRCLE_WORKFLOW_ID:0:5}"   --parameter-overrides  WorkflowID="${CIRCLE_WORKFLOW_ID:0:5}"  --tags project=react 
       
       - run:
           name: Create Services Stack
           command: |
-            aws cloudformation deploy --template-file services.yml   --stack-name "service-${CIRCLE_WORKFLOW_ID:0:5}"  --parameter-overrides  WorkflowID="${CIRCLE_WORKFLOW_ID:0:5}"   --tags project=react 
+            aws cloudformation create-stack --stack-name "network-${CIRCLE_WORKFLOW_ID:0:5}" --template-body file://service.yml   --parameters file://service.json --capabilities "CAPABILITY_IAM" "CAPABILITY_NAMED_IAM" --region=us-east-1   --parameter-overrides  WorkflowID="${CIRCLE_WORKFLOW_ID:0:5}"  --tags project=react 
+            #aws cloudformation deploy --template-file services.yml   --stack-name "service-${CIRCLE_WORKFLOW_ID:0:5}"  --parameter-overrides  WorkflowID="${CIRCLE_WORKFLOW_ID:0:5}"   --tags project=react 
      
       - destroy-enviroment
 
