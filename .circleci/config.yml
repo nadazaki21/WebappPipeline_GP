@@ -49,7 +49,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints: 
-            - "     "
+            - "57:3d:1b:ca:bb:bf:17:d8:38:c0:c8:30:fe:b7:14:40"
 
       - run:
           name: Add hosting Instace ip to ansible inventory
@@ -123,7 +123,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints: 
-            - "  "
+            - "57:3d:1b:ca:bb:bf:17:d8:38:c0:c8:30:fe:b7:14:40"
       - run:
           name: Install awscli
           command: |
@@ -150,7 +150,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints: 
-            - "  "
+            - "57:3d:1b:ca:bb:bf:17:d8:38:c0:c8:30:fe:b7:14:40"
 
       - run:
           name: make sure that app files are available
@@ -176,16 +176,16 @@ jobs:
   
 
 
-  #run-app: "npm build " " npm run start " # it runs when ngginx starts 
+  # #run-app: "npm build " " npm run start " # it runs when ngginx starts 
 
-  #make-website-available:
+  # #make-website-available:
 
-  confiugre-nginx:
+  # confiugre-nginx:
   
    
-  #restart-ngnix:
+  # #restart-ngnix:
   
-  run-pm2:
+  # run-pm2:
 
 
   
