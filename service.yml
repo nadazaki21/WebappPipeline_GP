@@ -16,7 +16,11 @@ Parameters:
     Description: The bucket containing static website files
     Type: String
     Default: projectnada
+  
 
+  WorkflowID:
+      Description: Unique identifier.
+      Type: String
 
 
 Resources:

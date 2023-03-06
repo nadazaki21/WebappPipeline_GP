@@ -44,10 +44,10 @@ Parameters:
       Description: AZ subnet 2
       Type: String
 
-    Parameters:
-      WorkflowID:
-        Description: Unique identifier.
-        Type: String
+    
+    WorkflowID:
+      Description: Unique identifier.
+      Type: String
 
 
 
