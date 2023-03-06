@@ -49,8 +49,13 @@
     {
         "ParameterKey": "AZ2",
         "ParameterValue": "us-east-1b"
+    },
+    
+    {
+        "ParameterKey": "WorkflowID",
+        "ParameterValue": "${CIRCLE_WORKFLOW_ID:0:5}"
     }
-
+    
     
      
 ]
